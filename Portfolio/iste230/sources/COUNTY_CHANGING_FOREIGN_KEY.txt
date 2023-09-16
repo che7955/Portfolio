@@ -1,0 +1,74 @@
+START TRANSACTION;
+SELECT contactid, CONCAT(lastname,", ",firstname) as Name from contact
+where contactid = "10010";
+
+DELETE FROM contact where contactid = "10010";
+ROLLBACK;
+
+
+INSERT INTO CONTACT values(10011,"Rita","E","Miller",
+"Ms.","Office worker","Secretary",
+null,"Rita.Habermas@xyzcompany.com",
+  null,null,"1960-08-01",null,0,0,1,null);
+  
+insert into personal values ("10011","1 Sunset Road",
+                      "Livona","MI","48111","rel");
+
+insert into relative values ("10011","X-Wife");   
+
+
+
+
+The alter table command lets you do quite a bit. But when it comes to 
+altering existing constraints, there is not much you can do. 
+If you want to add an on delete cascade to an existing foreign key 
+constraint, you are going to need two statements.
+
+The first statement will drop the constraint and the second 
+statement will recreate it with the addition of the on delete 
+clause. Furthermore, you’ll want to do this in a transaction 
+to ensure the integrity of your data during the transition between indexes.
+
+Here is an example:
+
+ALTER TABLE relative drop FOREIGN KEY
+relative_contact_fk;
+
+ALTER TABLE Friend drop FOREIGN KEY
+friend_personal_fk;
+
+ALTER TABLE Personal drop FOREIGN KEY
+personal_contact_fk;
+
+
+ALTER TABLE relative ADD 
+CONSTRAINT relative_contact_fk FOREIGN KEY (contactID) 
+REFERENCES Personal(contactID)
+ON DELETE CASCADE
+ON UPDATE CASCADE;
+-- DELETE of a PERSONAL contact, that is also a RELATIVE, 
+-- will cause the RELATIVE record to also be deleted 
+
+
+ALTER TABLE Friend ADD
+CONSTRAINT friend_personal_fk FOREIGN KEY (contactID)
+REFERENCES personal(contactID)
+ON DELETE CASCADE
+ON UPDATE CASCADE;
+
+ALTER TABLE Personal ADD 
+CONSTRAINT personal_contact_fk FOREIGN KEY (contactID) 
+REFERENCES contact(contactID)
+ON DELETE CASCADE
+ON UPDATE CASCADE;
+
+-- DELETE of a CONTACT, that is also a PERSONAL contact, will cause the 		PERSONAL record to also be deleted */
+-- PERSONAL record to also be deleted */
+
+select contactid, lastname, firstname from 
+     contact where contactid = "10011";
+
+
+START TRANSACTION;     
+delete from contact where contactid = "10011";
+ROLLBACK;

@@ -1,0 +1,89 @@
+/* This should allow the box-sizing property of border box to be inherited by all elements. 
+*/
+:root {
+    box-sizing: border-box;
+    font-size:100%;
+ }
+ 
+ *, ::after, ::before {
+    box-sizing: inherit;
+    margin: 0; 
+    padding: 0;
+    border: 0;
+ }
+
+ *{
+   background-color: #e4fcf8;
+}
+body{
+   font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.image{
+   max-width: 100%;
+}
+
+header{
+   background-color: #6ac4d4;
+   padding: .8em;
+   border-bottom: #23408f;
+}
+
+.right{
+   float:right;
+   padding: auto;
+}
+
+h1{
+   text-align: center;
+   color: white;
+   background-color: #6ac4d4;
+}
+
+.pano-skyline{
+   width: 100%;
+}
+
+main{
+   max-width: 96vw;
+   padding-left: 1em;
+   padding-right: 1em ;
+   display: flex;
+   flex-wrap: wrap;
+}
+
+h2{
+   padding: 1em;
+   float:none;
+   color:#23408f;
+}
+
+.info{
+   padding-left: 2rem;
+   padding-right: 2rem;
+   padding-bottom: 4rem;
+}
+
+#histcityimg{
+   float:left;
+   width: 50em;
+   height: 30em;
+   display: flex;
+   flex-wrap: wrap;
+}
+
+#stateimg{
+   float: initial;
+   width: 50em;
+   height: 30em;
+   display: flex;
+   flex-wrap: wrap;
+}
+
+#jazzimg{
+   float:right;
+   width: 50em;
+   height: 30em;
+   display: flex;
+   flex-wrap: wrap;
+}

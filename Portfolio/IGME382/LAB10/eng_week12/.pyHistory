@@ -1,0 +1,3 @@
+﻿arcpy.analysis.Buffer('floodzones_Clip_sel' , 'flooding_500ft' , 500)
+arcpy.analysis.Buffer('floodzones_Clip_Sel','flooding_500ft',500);
+arcpy.analysis.Buffer('Clip_OutFeatureClass_floodzones_Clip', 'flooding_500ft', 500)

@@ -1,0 +1,30 @@
+body{
+    padding: 1em;
+    color: black;
+    background-image: url(../140/images/sky);
+    background-size: 200%;
+
+}
+
+@media screen and (max-width: 768px){
+    first-media-query{color: blue;}
+}
+@media screen and (min-width: 768px){
+    first-media-query{color: red;}
+}
+
+h1{
+    color: rgb(255, 208, 0);
+}
+a:link{
+    color:purple;
+}
+a:visited{
+    color:blueviolet;
+}
+a:hover{
+    color: yellow;
+}
+a:active{
+    color: red;
+}

@@ -1,0 +1,55 @@
+body{
+    padding: 1em;
+    color: black;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    background-color: coral;
+}
+
+header{
+    color: black;
+    font-size: 1.8rem;
+    text-align: center;
+    background-color: grey;
+}
+
+h2{
+    text-decoration: underline;
+    font-size: 1.5rem;
+    margin-top: 2.5rem;
+}
+
+p{
+    line-height: 1.5;
+    margin-top: 0.625rem;
+}
+
+ul {
+    list-style: disc;
+    margin-left: 1.25rem;
+    border-style: double;
+    padding: 1.5em;
+}
+  
+  
+ol {
+    list-style: decimal;
+    margin-left: 1.25rem;
+    border-style: double;
+    padding: 1.5em;
+}
+
+
+
+a:link{
+    color:maroon;
+}
+a:visited{
+    color:purple;
+}
+a:hover{
+    color: blue;
+}
+a:active{
+    color: palegreen;
+}

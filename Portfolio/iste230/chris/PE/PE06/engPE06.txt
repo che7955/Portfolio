@@ -1,0 +1,77 @@
+-- Chris Eng PE06
+mysql> SOURCE C:\iste230\chris\PE\PE06\eng_week8.sql
+--------------
+DROP DATABASE IF EXISTS product
+--------------
+
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+--------------
+CREATE DATABASE product
+--------------
+
+Query OK, 1 row affected (0.00 sec)
+
+Database changed
+--------------
+CREATE TABLE customer (
+    CustID INT(10) NOT NULL AUTO_INCREMENT,
+    CustName VARCHAR(20),
+    CustContact VARCHAR(20),
+    PRIMARY KEY (CustID)
+)
+--------------
+
+Query OK, 0 rows affected, 1 warning (0.02 sec)
+
+--------------
+CREATE TABLE product (
+    ProdID INT(10) NOT NULL AUTO_INCREMENT,
+    ProdDescription VARCHAR(200),
+    UnitPrice INT(10),
+    PRIMARY KEY (ProdID)
+)
+--------------
+
+Query OK, 0 rows affected, 2 warnings (0.01 sec)
+
+--------------
+CREATE TABLE PO_Detail (
+    PO INT NOT NULL,
+    CustID INT,
+    ProdID INT,
+    UnitPrice INT(10),
+    PRIMARY KEY (PO),
+    FOREIGN KEY (CustID) REFERENCES customer(CustID),
+    FOREIGN KEY (ProdID) REFERENCES product(ProdID)
+)
+--------------
+
+Query OK, 0 rows affected, 1 warning (0.02 sec)
+
+--------------
+CREATE TABLE PO (
+    PO INT NOT NULL,
+    OrderDate DATE,
+    BillToAdress TINYTEXT,
+    ShipToAdress TINYTEXT,
+    PRIMARY KEY (PO),
+    FOREIGN KEY (PO) REFERENCES PO_Detail(PO)
+)
+--------------
+
+Query OK, 0 rows affected (0.01 sec)
+
+--------------
+CREATE TABLE PO (
+    PO INT NOT NULL,
+    Date DATE,
+    Ammount INT(10),
+    PRIMARY KEY (PO),
+    PRIMARY KEY (Date),
+    FOREIGN KEY (PO) REFERENCES PO_Detail(PO)
+)
+--------------
+
+ERROR 1050 (42S01): Table 'po' already exists
+mysql> NOTEE

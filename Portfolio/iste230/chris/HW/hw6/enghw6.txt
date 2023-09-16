@@ -1,0 +1,78 @@
+mysql> SOURCE C:\iste230\chris\HW\hw6\engHW6.sql
+--------------
+SELECT title, category as catDescription FROM book
+    ORDER BY category DESC, title ASC
+--------------
+
++--------------------------------------------------+----------------+
+| title                                            | catDescription |
++--------------------------------------------------+----------------+
+| The Shortest Book in the World                   |              9 |
+| Yes! Networking is for Bills Fans                |              9 |
+| From Brockport to IT                             |              8 |
+| From Deep in the Heart of Texas to IT            |              8 |
+| From the Shores of Lake Erie to IT               |              8 |
+| Calculus for Phys Ed Majors                      |              7 |
+| The Science of Literature Searching              |              6 |
+| How to Keep your Cable Bill Down                 |              5 |
+| How to Keep your Cellular Bill Down              |              5 |
+| Tired of wired? Infrared instead!                |              5 |
+| ER, SOM, NF, DK/NF, SQL, JDBC, ODBC, and RELVAR  |              4 |
+| A language without Pointers? Priceless.          |              3 |
+| How to add Class to your Programming             |              3 |
+| JAVA: It's more than Just a Programming Language |              3 |
+| Master C++ Through The Classic Comics            |              2 |
+| Master HTML Through The Classic Comics           |              2 |
+| Master Wireless Through The Classic Comics       |              2 |
+| I Lasted my Love's Last Lingering Longing        |              1 |
+| My Lost Love's Long Last Lingering               |              1 |
+| My Love's at Long Last Lost his Lingering        |              1 |
+| My Love's Last Lingering Lost                    |              1 |
+| My Love's Last Longing                           |              1 |
+| Women are From Venus ORACLE is from Beyond Pluto |              1 |
++--------------------------------------------------+----------------+
+23 rows in set (0.00 sec)
+
+--------------
+SELECT name, title, rating FROM book JOIN bookreview USING (ISBN)
+        JOIN reviewer USING (ReviewerID)
+            WHERE EmployedBy IS NULL
+--------------
+
++-------+---------------------------------------+--------+
+| name  | title                                 | rating |
++-------+---------------------------------------+--------+
+| Leone | How to Keep your Cellular Bill Down   |      7 |
+| Leone | How to Keep your Cable Bill Down      |      7 |
+| Leone | From Deep in the Heart of Texas to IT |      6 |
++-------+---------------------------------------+--------+
+3 rows in set (0.00 sec)
+
+--------------
+SELECT title, LastName, FirstName, from book JOIN bookauthor USING (ISBN)
+        JOIN author USING(authorID)
+            ORDER BY title, LastName
+--------------
+
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'from book JOIN bookauthor USING (ISBN)
+        JOIN author USING(authorID)
+     ' at line 1
+--------------
+SELECT ISBN, title FROM book
+    WHERE EXISTS
+    (
+        SELECT * FROM category
+        WHERE book.category = category.catID AND CatDescription LIKE "S%"
+    )
+--------------
+
++---------------+-----------------------------------+
+| ISBN          | title                             |
++---------------+-----------------------------------+
+| 1-222-32443-7 | Calculus for Phys Ed Majors       |
+| 2-089-77869-5 | Yes! Networking is for Bills Fans |
+| 8-330-69586-6 | The Shortest Book in the World    |
++---------------+-----------------------------------+
+3 rows in set (0.00 sec)
+
+mysql> notee

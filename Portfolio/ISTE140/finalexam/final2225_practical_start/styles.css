@@ -1,0 +1,99 @@
+body {
+    margin: 10px;
+    padding: 0;
+}
+
+/* STEP 3 - replace this comment with the grid-area property definitions for 
+	each of the six areas of the document. look up how to do this on w3schools if neccessary
+*/
+
+
+
+.header { grid-area: header; }
+.nav { grid-area: nav; }
+.side1 { grid-area: left; }
+.side2 { grid-area: right; }
+.main {grid-area: mainz}
+.footer { grid-area: footer; }
+
+.wrapper {
+    display: grid;
+/*  STEP 4 - replace this comment with the 2-column grid template command */
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 1em;
+    grid-template-areas:
+    'header header '
+    'nav nav'
+    'left mainz'
+    'right mainz'
+    'footer footer';
+}
+
+.box {
+    background-color: #00b;
+    color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    font-family: arial;
+}
+
+.nav ul{
+    /*STEP - 6 replace this comment with the approriate command to make this container flex / flexbox */ 
+ 
+    display: flex;
+    /* STEP 7 Replace this comment with the the flex Property that sets how flex items are placed in the flex container defining the main axis and the direction to match up with the screenshots. In this case we want our items side by side (NOT stacked) as our navigation has the full width to work with in Figure 1*/
+    flex-direction: row;
+    /* STEP 8 Use the flex property to put space around each item so it looks like the screenshot image*/
+    justify-content: space-around;
+    
+    padding-left:0px;
+
+}
+
+/* HINT: This media query shoud activate when screen size is greater than 600px */
+@media only screen and (max-width: 600px) {
+    .wrapper {
+        display: grid;
+        /* STEP 10 - develop the 3-column grid template*/
+        grid-template-columns:100px 1fr 3fr ;
+        grid-gap: 1em;
+        grid-template-areas: myArea; /* STEP 11 - layout the 3-column format with the area names;	*/
+        
+    }
+    
+    .nav ul{
+        
+        /*STEP 12 - (create an override) to change how the navigation items are displayed.  The navigation on desktop has moved to a narrow side bar (figure 2) so we now need our items to stack on top of eachother. Override what we did in step 7 with the opposite*/
+        flex-direction: column;      
+    }
+}
+
+/*You shouldnt have to touch any of this CSS below! */
+.main,
+.side1,
+.side2,
+.footer {
+    background-color: #00b;
+    color: #fff;
+    padding: 20px;
+    font-family: arial;
+}
+
+.nav {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.side1,
+.side2 {
+    background-color: #0d0;
+}

@@ -1,0 +1,46 @@
+Code,Description
+1,Urban or built-up land 
+11, Residental 
+12, Commercial and services
+13, Industrial 
+14, Transportation communication utilities 
+15, Industrial and commercial complexes 
+16, Mixed urban or built-up land 
+17, Other urban or built-up land 
+2, Agricultural land 
+21, Cropland and pasture 
+22, Orchards groves vineyards nurseries and ornamental horticultural 
+23, Confined feeeding operations 
+24, Other agricultural land 
+3, Rangeland 
+31, Herbaceous rangeland 
+32, Shrub and brush rangeland 
+33, Mixed rangeland 
+4, Forest land 
+41, Deciduous forest land 
+42, Evergreen forest land 
+43, Mixed forest land 
+5, Water 
+51, Streams and canals 
+52, Lakes 
+53, Reservoirs 
+54, Bays and estuaries
+6, Wetland 
+61, Forested wetland 
+62, Nonforested wetland 
+7, Barren land 
+71, Dry salt flats 
+72, Beaches 
+73, Sandy areas not beaches 
+74, Bare exposed rock 
+75, Strip mines quarries gravel pits 
+76, Transitional areas 
+8, Tundra 
+81, Shrub and brush tundra 
+82, Herbaceous tundra 
+83, Bare ground 
+84,Wet tundra 
+85, Mixed tundra 
+9,Perennial snow or ice
+91, Perennial snowfields 
+92, Glaciers 

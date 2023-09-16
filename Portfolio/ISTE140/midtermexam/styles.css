@@ -1,0 +1,55 @@
+* { 
+	margin: 0; padding: 0; 
+	}
+body{
+	background-color: beige;
+	font-family: Arial, Helvetica, sans-serif;
+	margin: 2em;
+	
+}
+.right{
+	float:right;
+	padding-left: 1.5em;
+	
+}
+h1{
+	text-align:center;
+	color: darkgreen;
+	font-size: 24px;
+}
+header{
+	background-color: brown;
+	border-left: 25px solid blue;
+	margin: 8em;
+	padding: 2em;
+}
+h2{
+	font-size:14px;
+	color: black;
+	margin: 2em;
+}
+
+.para{
+	font-size: 12px;
+	line-height: normal;
+	margin: 1em;
+}
+
+.left{
+	float: left;
+	padding-right: 1.5em;
+}
+
+.center figcaptions{
+	text-align: center;
+	color: red;
+	font-size: 120%;
+	margin: 0.5em;
+}
+
+footer{text-align: right;}
+.copyright{
+	color: blue;
+	font-size: 85%;
+	text-align:right;
+}

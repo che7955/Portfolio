@@ -1,0 +1,100 @@
+mysql> SOURCE C:\iste230\chris\PE\PE08\engPE8soln.sql
+--------------
+SELECT name FROM recipe WHERE source = "mom"
+--------------
+
++--------------------+
+| name               |
++--------------------+
+| Linguine Pescadoro |
+| Zuppa Inglese      |
++--------------------+
+2 rows in set (0.00 sec)
+
+--------------
+SELECT recipe.name FROM recipe JOIN nutrition USING(recipeId)
+    WHERE nutrition.quantity < 800
+--------------
+
++--------------------------------------------+
+| name                                       |
++--------------------------------------------+
+| Beef Parmesan with Garlic Angel Hair Pasta |
+| Beef Parmesan with Garlic Angel Hair Pasta |
+| Beef Parmesan with Garlic Angel Hair Pasta |
+| Linguine Pescadoro                         |
+| Linguine Pescadoro                         |
+| Linguine Pescadoro                         |
+| Linguine Pescadoro                         |
+| Zuppa Inglese                              |
+| Zuppa Inglese                              |
+| Zuppa Inglese                              |
+| Zuppa Inglese                              |
+| Lobster Thermadore                         |
+| Lobster Thermadore                         |
+| Lobster Thermadore                         |
+| Crispy Fried Chicken                       |
+| Crispy Fried Chicken                       |
+| Crispy Fried Chicken                       |
+| Crispy Fried Chicken                       |
++--------------------------------------------+
+18 rows in set (0.00 sec)
+
+--------------
+SELECT ingredients.name, ingredientlist.quantity FROM recipe
+    JOIN ingredientlist USING (recipeId)
+    JOIN ingredients USING (IngredientId)
+        WHERE recipe.name like "Beef Parmesan%"
+--------------
+
++------------------------------------+----------+
+| name                               | quantity |
++------------------------------------+----------+
+| beef cube steak                    |      1.5 |
+| onion, sliced into thin rings      |        1 |
+| green bell pepper, sliced in rings |        1 |
+| Italian seasoned bread crumbs      |        1 |
+| grated Parmesan cheese             |      0.5 |
+| olive oil                          |    0.125 |
+| spaghetti sauce                    |        1 |
+| shredded mozzarella cheese         |      0.5 |
+| angel hair pasta                   |        1 |
+| garlic                             |        1 |
+| butter                             |    0.125 |
++------------------------------------+----------+
+11 rows in set (0.00 sec)
+
+--------------
+SELECT ingredientlist.recipeId FROM ingredientlist
+    JOIN ingredients USING (IngredientId)
+        WHERE LOWER(ingredients.type) IN ("beef", "chicken", "pork", "lamb")
+--------------
+
++----------+
+| recipeId |
++----------+
+|        1 |
+|        5 |
+|       10 |
+|       11 |
+|       12 |
++----------+
+5 rows in set (0.00 sec)
+
+--------------
+SELECT distinct recipe.name FROM recipe JOIN nutrition USING(recipeId)
+    JOIN ingredientlist USING (recipeId)
+    JOIN ingredients USING (IngredientId)
+        WHERE nutrition.name = "calories"
+        AND nutrition.quantity < 700
+        AND ingredients.type = "fish"
+--------------
+
++--------------------+
+| name               |
++--------------------+
+| Linguine Pescadoro |
++--------------------+
+1 row in set (0.00 sec)
+
+mysql> notee

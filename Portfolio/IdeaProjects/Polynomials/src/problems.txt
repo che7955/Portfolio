@@ -1,0 +1,16 @@
+Java Problems
+
+For each of the numbered problems:
+- State whether the problem occurs at compile-time or run-time
+- Briefly describe what the problem is in plain English
+
+1.compile time error. referred to the problem class as main.
+2.runtime error. never created i to store the input data.
+3.runtime error. divide by zero.
+4.compile time error. array incorrectly created.
+5.runtime error. if y is larger than x there is no return.
+6.compile time error. never added Arrays.asList in the new ArrayList.
+7.compile time error. forgot to add "new ch("a") when inputting characters.
+8.compile time error. cannot create and assign value of 1 to K when making it.
+9.runtime error. inputting float for a string.
+10.compile time error. never created the substring to print out.

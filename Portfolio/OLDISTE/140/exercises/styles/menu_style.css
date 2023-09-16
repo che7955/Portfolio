@@ -1,0 +1,19 @@
+body{
+    font-family:'Times New Roman', Times, serif;
+    margin: 3em;
+    border: 1px solid gray;
+    padding: 2%;
+
+}
+h1{
+    background-color:lightgrey;
+}
+span.summer{
+    color: orange;
+}
+span.new_item{
+    color: red;
+}
+span.dishes{
+    background-color: lightskyblue;
+}

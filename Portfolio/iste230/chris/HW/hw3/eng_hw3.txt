@@ -1,0 +1,214 @@
+mysql> -- Chris Eng
+mysql> -- hw3p1
+mysql> -- verbose
+mysql> -- question 1
+mysql> SHOW TABLES
+    -> ;
++-----------------+
+| Tables_in_world |
++-----------------+
+| country         |
++-----------------+
+1 row in set (0.00 sec)
+
+mysql> USE world;
+Database changed
+mysql> SELECT headOfState FROM country WHERE name='United States';
++-----------------+
+| headOfState     |
++-----------------+
+| Donald J. Trump |
++-----------------+
+1 row in set (0.00 sec)
+
+mysql> -- Question #2
+mysql> UPDATE country SET headOfState = "Joe R. Biden" WHERE name='United States';
+Query OK, 1 row affected (0.00 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
+
+mysql> SELECT headOfState FROM country WHERE name='United States';
++--------------+
+| headOfState  |
++--------------+
+| Joe R. Biden |
++--------------+
+1 row in set (0.00 sec)
+
+mysql> -- Question 3
+mysql> SELECT localName FROM country WHERE indepYear IS NULL;
++----------------------------------------------+
+| localName                                    |
++----------------------------------------------+
+| Aruba                                        |
+| Anguilla                                     |
+| Nederlandse Antillen                         |
+| Amerika Samoa                                |
+| ñ                                           |
+| Terres australes franÁaises                 |
+| Bermuda                                      |
+| Bouvet¯ya                                   |
+| Cocos (Keeling) Islands                      |
+| The Cook Islands                             |
+| Christmas Island                             |
+| Cayman Islands                               |
+| As-Sahrawiya                                 |
+| Falkland Islands                             |
+| F¯royar                                     |
+| Gibraltar                                    |
+| Guadeloupe                                   |
+| Kalaallit Nunaat/Gr¯nland                   |
+| Guyane franÁaise                            |
+| Guam                                         |
+| Xianggang/Hong Kong                          |
+| Heard and McDonald Islands                   |
+| British Indian Ocean Territory               |
+| Macau/Aomen                                  |
+| Northern Mariana Islands                     |
+| Montserrat                                   |
+| Martinique                                   |
+| Mayotte                                      |
+| Nouvelle-CalÈdonie                          |
+| Norfolk Island                               |
+| Niue                                         |
+| Pitcairn                                     |
+| Puerto Rico                                  |
+| Filastin                                     |
+| PolynÈsie franÁaise                        |
+| RÈunion                                     |
+| South Georgia and the South Sandwich Islands |
+| Saint Helena                                 |
+| Svalbard og Jan Mayen                        |
+| Saint-Pierre-et-Miquelon                     |
+| The Turks and Caicos Islands                 |
+| Tokelau                                      |
+| Timor Timur                                  |
+| United States Minor Outlying Islands         |
+| British Virgin Islands                       |
+| Virgin Islands of the United States          |
+| Wallis-et-Futuna                             |
++----------------------------------------------+
+47 rows in set (0.00 sec)
+
+mysql> -- Question 4
+mysql> SELECT name, continent FROM country WHERE population>= '1000000000' AND lifeExpectancy >'70' AND  lifeExpectancy < '80' ;
++-------+-----------+
+| name  | continent |
++-------+-----------+
+| China | Asia      |
++-------+-----------+
+1 row in set (0.00 sec)
+
+mysql> -- Question 5
+mysql> SELECT name FROM country WHERE continent='South America' OR continent= 'North America';
++----------------------------------+
+| name                             |
++----------------------------------+
+| Aruba                            |
+| Anguilla                         |
+| Netherlands Antilles             |
+| Argentina                        |
+| Antigua and Barbuda              |
+| Bahamas                          |
+| Belize                           |
+| Bermuda                          |
+| Bolivia                          |
+| Brazil                           |
+| Barbados                         |
+| Canada                           |
+| Chile                            |
+| Colombia                         |
+| Costa Rica                       |
+| Cuba                             |
+| Cayman Islands                   |
+| Dominica                         |
+| Dominican Republic               |
+| Ecuador                          |
+| Falkland Islands                 |
+| Guadeloupe                       |
+| Grenada                          |
+| Greenland                        |
+| Guatemala                        |
+| French Guiana                    |
+| Guyana                           |
+| Honduras                         |
+| Haiti                            |
+| Jamaica                          |
+| Saint Kitts and Nevis            |
+| Saint Lucia                      |
+| Mexico                           |
+| Montserrat                       |
+| Martinique                       |
+| Nicaragua                        |
+| Panama                           |
+| Peru                             |
+| Puerto Rico                      |
+| Paraguay                         |
+| El Salvador                      |
+| Saint Pierre and Miquelon        |
+| Suriname                         |
+| Turks and Caicos Islands         |
+| Trinidad and Tobago              |
+| Uruguay                          |
+| United States                    |
+| Saint Vincent and the Grenadines |
+| Venezuela                        |
+| Virgin Islands, British          |
+| Virgin Islands, U.S.             |
++----------------------------------+
+51 rows in set (0.00 sec)
+
+
+mysql> SOURCE C:\iste230\sources\createContactInfo.sql
+Query OK, 1 row affected (0.01 sec)
+
+Query OK, 1 row affected (0.00 sec)
+
+Database changed
+Query OK, 0 rows affected, 1 warning (0.01 sec)
+
+mysql> SOURCE C:\iste230\sources\insertContactInfo.sql
+Query OK, 1 row affected (0.00 sec)
+
+mysql> SHOW TABLES;
++------------------+
+| Tables_in_conman |
++------------------+
+| contactinfo      |
++------------------+
+1 row in set (0.00 sec)
+
+mysql> USE conman;
+Database changed
+mysql> -- Chris Eng 
+mysql> -- hw3p2
+mysql> -- TASK #1
+   
+INSERT INTO contactInfo(contactID,firstName,middleInitial,lastName,email' at line 1
+mysql> INSERT INTO contactInfo(contactID,firstName,middleInitial,lastName,email,url,birthday,notes)VALUES(2,'Chris','E','Eng','che7955@rit.edu','http://www.rit.edu/me',NULL,'student 2022');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO contactInfo(contactID,firstName,middleInitial,lastName,email,url,birthday,notes)VALUES(3,'Eli','T','Wallowby','etwallowby@concor.com ','www.concor.com/~wallowby','1956-03-26','All meetings must bescheduled through hisassistant.');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO contactInfo(contactID,firstName,middleInitial,lastName,email,url,birthday,notes)VALUES(4,'Eve','C','Sampson','esampson@concor.com ',NULL,'1972-05-11','Very helpful.');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> INSERT INTO contactInfo(contactID,firstName,middleInitial,lastName,email,url,birthday,notes)VALUES(5,'Carson','B','Campbell','cbc232@mvch.org',NULL,'1955-01-05','Wife: Lisa Kids:Lucas, Lucy, andLucinda.');
+Query OK, 1 row affected (0.00 sec)
+
+mysql> -- TASK #2
+mysql> ALTER TABLE contactInfoADD nickname TINYTEXT;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near 'nickname TINYTEXT' at line 1
+mysql> ALTER TABLE contactInfo ADD nickname TINYTEXT;
+Query OK, 0 rows affected (0.01 sec)
+Records: 0  Duplicates: 0  Warnings: 0
+
+mysql> -- task #3
+mysql> ALTER TABLE contactInfoMODIFY COLUMN fistName VARCHAR(15) NOT NULL;
+mysql> ALTER TABLE contactInfo MODIFY COLUMN fistName VARCHAR(15) NOT NULL;
+mysql> ALTER TABLE contactInfo MODIFY COLUMN lastName VARCHAR(25) NOT NULL;
+-- TASK #4
+mysql> UPDATE contactInfo SET nickname='Dave' WHERE contactID='1';
+-- TASK #5
+mysql>UPDATE contactInfo SET url=NULL WHERE contactID='3';
+mysql> notee

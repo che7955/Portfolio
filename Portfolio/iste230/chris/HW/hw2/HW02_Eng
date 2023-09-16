@@ -1,0 +1,26 @@
+mysql> SHOW DATABASES
+    -> ;
++--------------------+
+| Database           |
++--------------------+
+| hw2                |
+| information_schema |
+| item               |
+| mysql              |
+| performance_schema |
+| sys                |
++--------------------+
+6 rows in set (0.00 sec)
+
+mysql> SHOW TABLES;
++---------------+
+| Tables_in_hw2 |
++---------------+
+| item          |
++---------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT * FROM item;
+Empty set (0.00 sec)
+
+mysql> notee
